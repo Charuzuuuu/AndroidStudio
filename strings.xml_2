@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">ProjectCollection</string>
+    <string name="but1">Layout Exercise</string>
+    <string name="but2">Button Exercise</string>
+    <string name="but3">Calculator Exercise</string>
+    <string name="but4">Button 4</string>
+    <string name="Hello">HELLO WORLD!!!!!</string>
+    <string name="cat1">LionLooking</string>
+    <string name="cat2">Sigma</string>
+    <string name="cat3">Black bgCat</string>
+    <string name="cat4">Manipulator</string>
+    <string name="insta">Instagram</string>
+    <string name="story1">Cat 1</string>
+    <string name="story2">Cat 2</string>
+    <string name="story3">Cat 3</string>
+    <string name="story4">Cat 4</string>
+    <string name="post1">Cat Post 1</string>
+    <string name="post2">Cat Post 2</string>
+    <string name="post3">Cat Post 3</string>
+    <string name="post4">Cat Post 4</string>
+    <string name="post5">Cat Post 5</string>
+    <string name="post6">Cat Post 6</string>
+    <string name="like">Like</string>
+    <string name="share">Share</string>
+    <string name="comment">Comment</string>
+    <string name="close">Close</string>
+    <string name="toast">Toast</string>
+    <string name="changebg">Change BG</string>
+    <string name="chgbtnbg">Change Button BG</string>
+    <string name="disappear">Disappear</string>
+</resources>
