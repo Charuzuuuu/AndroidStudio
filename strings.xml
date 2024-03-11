@@ -28,4 +28,5 @@
     <string name="changebg">Change BG</string>
     <string name="chgbtnbg">Change Button BG</string>
     <string name="disappear">Disappear</string>
+    <string name="ret">Return</string>
 </resources>
