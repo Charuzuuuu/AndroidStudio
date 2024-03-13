@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button btn1;
     Button btn2;
+    Button btn3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         btn1 = (Button) findViewById(R.id.button1);
         btn2 = (Button) findViewById(R.id.button2);
+        btn3 = (Button) findViewById(R.id.button3);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,9 +43,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view3) {
+                Intent intent3 = new Intent(
+                        MainActivity.this, CalculatorExercise.class
+                );
+                startActivity(intent3);
+            }
+        });
+
+
+
+
     }
-
-
-
-
 }
