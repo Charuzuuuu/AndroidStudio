@@ -6,84 +6,110 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import org.mozilla.javascript.Context;
-import org.mozilla.javascript.Scriptable;
-import com.google.android.material.button.MaterialButton;
 
-public class CalculatorExercise extends AppCompatActivity implements View.OnClickListener{
+public class CalculatorExercise extends AppCompatActivity {
 
-    TextView result, solution;
-    MaterialButton buttonDiv, buttonMul, buttonSub, buttonAdd, buttonEq;
-    MaterialButton button0, button1, button2, button3, button4, button5, button6, button7, button8, button9;
+    TextView solution, result;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculator_exercise);
 
-        result = findViewById(R.id.result_text);
         solution = findViewById(R.id.solution_text);
-
-        assignId(buttonDiv,R.id.button_divide);
-        assignId(buttonMul,R.id.button_multiply);
-        assignId(buttonSub,R.id.button_minus);
-        assignId(buttonAdd,R.id.button_add);
-        assignId(buttonEq,R.id.button_equal);
-        assignId(button0,R.id.button_0);
-        assignId(button1,R.id.button_1);
-        assignId(button2,R.id.button_2);
-        assignId(button3,R.id.button_3);
-        assignId(button4,R.id.button_4);
-        assignId(button5,R.id.button_5);
-        assignId(button6,R.id.button_6);
-        assignId(button7,R.id.button_7);
-        assignId(button8,R.id.button_8);
-        assignId(button9,R.id.button_9);
+        result = findViewById(R.id.result_text);
 
     }
 
-    void assignId(MaterialButton btn, int id){
-        btn = findViewById(id);
-        btn.setOnClickListener(this);
-    }
+    private void updateText(String strToAdd){
+        String oldStr = solution.getText().toString();
+        solution.setText(String.format("%s%s", oldStr, strToAdd));
+        String current = oldStr + strToAdd;
 
-    public void onClick(View view){
-        MaterialButton button = (MaterialButton) view;
-        String buttonText = button.getText().toString();
-        String calculate = solution.getText().toString();
+        Calculations cl = new Calculations();
 
-        if(buttonText.equals("=")){
-            solution.setText(result.getText());
-            return;
-        }
+        if(cl.isValidEquation(current)) {
+            Calculations calc = new Calculations(current);
 
-        calculate = calculate + buttonText;
-
-        solution.setText(calculate);
-
-        String fres = getResult(calculate);
-
-        if(!fres.equals("Err")){
-            result.setText(fres);
-       }
-    }
-
-    String getResult(String data){
-        try{
-            Context cont = Context.enter();
-            cont.setOptimizationLevel(-1);
-            Scriptable scpt = cont.initStandardObjects();
-            String fres = cont.evaluateString(scpt, data, "Javascipt", 1, null).toString();
-
-            if(fres.endsWith(".0")){
-                fres = fres.replace(".0", "");
-            }
-            return fres;
-
-        }catch (Exception e){
-            return "Err";
+            double res = calc.solCalculate();
+            String str = String.valueOf(res);
+            result.setText(str);
         }
     }
 
+    public void zeroBTN(View view){
+        updateText("0");
+    }
+
+    public void oneBTN(View view){
+        updateText("1");
+    }
+
+    public void twoBTN(View view){
+        updateText("2");
+    }
+
+    public void threeBTN(View view){
+        updateText("3");
+    }
+
+    public void fourBTN(View view){
+        updateText("4");
+    }
+
+    public void fiveBTN(View view){
+        updateText("5");
+    }
+
+    public void sixBTN(View view){
+        updateText("6");
+    }
+
+    public void sevenBTN(View view){
+        updateText("7");
+    }
+
+    public void eightBTN(View view){
+        updateText("8");
+    }
+
+    public void nineBTN(View view){
+        updateText("9");
+    }
+
+    public void plusBTN(View view){
+        updateText("+");
+    }
+
+    public void subtBTN(View view){
+        updateText("-");
+    }
+
+    public void multBTN(View view){
+        updateText("*");
+    }
+
+    public void divBTN(View view){
+        updateText("/");
+    }
+
+    public void dotBTN(View view){
+        updateText(".");
+    }
+
+    public void equalBTN(View view){
+
+        Calculations cl = new Calculations();
+
+        if(cl.isValidEquation(solution.getText().toString())) {
+            Calculations calc = new Calculations(solution.getText().toString());
+
+            double res = calc.resCalculate();
+            String str = String.valueOf(res);
+            result.setText(str);
+        }
+
+    }
 
 }
+
