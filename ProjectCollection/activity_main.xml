@@ -55,7 +55,7 @@
         android:layout_marginEnd="159dp"
         android:layout_marginBottom="269dp"
         android:background="@drawable/mainbuttons"
-        android:text="@string/but4"
+        android:text="Connect 3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
