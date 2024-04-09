@@ -119,6 +119,28 @@ public class Calculations {
         double convert, operand1, operand2;
         double res = 0;
         char current = 'c';
+        boolean plus = false;
+        boolean minus = false;
+        boolean prod = false;
+        boolean divide = false;
+
+        for(int i = 0; i < str.length(); i++){
+            if(str.charAt(i) == '+'){
+                plus = true;
+            }else if(str.charAt(i) == '-'){
+                minus = true;
+            }else if(str.charAt(i) == '*'){
+                prod = true;
+            }else if(str.charAt(i) == '/'){
+                divide = true;
+            }
+        }
+
+        if((plus || minus) && (!prod && !divide)){
+            return solCalculate();
+        }else if((prod || divide) && (!plus && !minus)){
+            return solCalculate();
+        }
 
         for(int i = 0; i < str.length(); i++) {
             if (str.charAt(i) != '+' && str.charAt(i) != '-' && str.charAt(i) != '*' && str.charAt(i) != '/') {
