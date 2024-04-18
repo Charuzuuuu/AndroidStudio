@@ -1,0 +1,64 @@
+package com.example.androidprojectcollection;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+
+public class PassingIntentsExercise2 extends AppCompatActivity {
+
+    TextView tFname, tLastname,tAddress,tBirthdate, tBirthplace,tPhonenum,tEmailadd, tGuardian, tGuardiannum, tGender, tCivilstat;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_passing_intents_exercise2);
+
+        tFname = findViewById(R.id.firstN);
+        tLastname = findViewById(R.id.lastN);
+        tAddress = findViewById(R.id.homeA);
+        tBirthdate = findViewById(R.id.birthD);
+        tBirthplace = findViewById(R.id.birthP);
+        tPhonenum = findViewById(R.id.phoneN);
+        tEmailadd = findViewById(R.id.emailA);
+        tGuardian = findViewById(R.id.guardianN);
+        tGuardiannum = findViewById(R.id.guardianPN);
+        tGender = findViewById(R.id.genderR);
+        tCivilstat = findViewById(R.id.civilS);
+
+        Intent intent = getIntent();
+
+        String fname = intent.getStringExtra("fname_key");
+        String gender =intent.getStringExtra("gender_key");
+        String pnum =intent.getStringExtra("pnum_key");
+        String lname =intent.getStringExtra("lname_key");
+        String bdate =intent.getStringExtra("bdate_key");
+        String emailadd =intent.getStringExtra("emailadd_key");
+        String civilstat =intent.getStringExtra("civilstat_key");
+        String bplace =intent.getStringExtra("bplace_key");
+        String guardian =intent.getStringExtra("guardian_key");
+        String guardiannum =intent.getStringExtra("guardiannum_key");
+        String address =intent.getStringExtra("address_key");
+
+        tFname.setText(fname);
+        tGender.setText(gender);
+        tPhonenum.setText(pnum);
+        tLastname.setText(lname);
+        tBirthdate.setText(bdate);
+        tEmailadd.setText(emailadd);
+        tCivilstat.setText(civilstat);
+        tBirthplace.setText(bplace);
+        tGuardian.setText(guardian);
+        tGuardiannum.setText(guardiannum);
+        tAddress.setText(address);
+    }
+
+    public void onClickReturn(View v) {
+        Intent intent = new Intent(
+                PassingIntentsExercise2.this, MainActivity.class
+        );
+        startActivity(intent);
+    }
+}
