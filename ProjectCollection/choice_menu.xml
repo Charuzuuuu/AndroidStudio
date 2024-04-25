@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/mItemChange"
+        android:title="Change" >
+        <menu>
+            <item
+                android:id="@+id/mChangeBackgroundColor"
+                android:title="Change Background Color" />
+            <item
+                android:id="@+id/mChangeText"
+                android:title="Change Text" />
+            <item
+                android:id="@+id/mToast"
+                android:title="Toast" />
+            <item
+                android:id="@+id/mInvisible"
+                android:title="Make It Invisible" />
+            <item
+                android:id="@+id/mChangeTextColor"
+                android:title="Change Text Color" />
+        </menu>
+    </item>
+    <item
+        android:id="@+id/mItemReset"
+        android:title="Reset" />
+    <item
+        android:id="@+id/mItemExit"
+        android:title="Exit" />
+
+</menu>
