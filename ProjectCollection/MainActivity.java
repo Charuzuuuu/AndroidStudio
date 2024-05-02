@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     Button btn6;
 
     Button btn8;
+    Button btn9;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         btn5 = (Button) findViewById(R.id.button5);
         btn6 = (Button) findViewById(R.id.button6);
         btn8 = (Button) findViewById(R.id.button8);
+        btn9 = (Button) findViewById(R.id.button9);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,6 +92,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        btn9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent9 = new Intent(
+                        MainActivity.this, MapsExercise.class
+                );
+                startActivity(intent9);
+            }
+        });
     }
 }
